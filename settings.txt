@@ -1,0 +1,86 @@
+##### SETTINGS FILE #####
+# You may make changes to this file to be picked up the next time the application is started.
+#
+##### SERIAL #####
+# PORT <port name>
+# BAUD <baud>  (valid bauds = 9600, 19200, 38400, 57600, 115200)
+#
+##### EMAIL #####
+# CONTACT <email address> (can use multiple EMAIL_CONTACT lines with one email per line)
+# USERNAME <from address>
+# SERVER <server address>
+# SECURITY <TLS or SSL or NONE>
+# PASSWORD <password>
+#
+##### SPEAKER #####
+# VOLUME <volume>  (where <volume> is in percent (0-100)
+#
+##### ZONE #####
+# ZONE zone type speak name
+#    where <zone> is the zone number
+#    and <type> is one of the following:
+#       UNKNOWN DOOR WINDOW MOTION GLASS FIRE FREEZE DOORBELL KEYFOB INFO
+#    and <faulted> <ready> are the IDs of the text to speak for this zone open/closed
+#    and <name> is the zone name (not limited to 16 chars like panel zone name
+#    Example: ZONE 1 DOOR 11 12 garage double door
+#
+##### RULE #####
+# RULE <when> <if> <do>
+#   where <when> is one of these:
+#     WHEN_ZONE_READY <zone number>, WHEN_ZONE_FAULTED <zone number>
+#     WHEN_ARMED, WHEN_ARMED_STAY, WHEN_ARMED_AWAY, WHEN_DISARMED, WHEN_BURGLARY, WHEN_FIRE
+#     WHEN_DAILY <hour> <minute>
+#     WHEN_WEEKLY <SUN|MON|TUE|WED|THU|FRI> <hour> <min>
+#     WHEN_MONTHLY <1-31> <hour> <min>
+#   and <if> is one of these:
+#     THEN, AND_IF_ARMED, AND_IF_ARMED_STAY, AND_IF_ARMED_AWAY, AND_IF_DISARMED
+#     AND_IF_ZONE_READY <zone number>, AND_IF_ZONE_FAULTED <zone number>
+#   and <do> is one of these:
+#     EMAIL <email address> "<subject>" "<message>"
+#     SPEAK "<message>"
+#     TURN_ON <device number>
+#     TURN_OFF <device number>
+
+SERIAL_BEGIN
+  PORT /dev/ttyUSB0
+  BAUD 38400
+SERIAL_END
+
+EMAIL_BEGIN
+  USERNAME sender_username@gmail.com
+  SERVER smtp.gmail.com
+  SECURITY TLS
+  PASSWORD mypassword
+  CONTACT email_to_send_to@gmail.com
+EMAIL_END
+
+SPEAKER_BEGIN
+  VOLUME 50
+SPEAKER_END
+
+ZONE_BEGIN
+  ZONE  1 GLASS     60  61  kitchen glass break
+  ZONE  2 GLASS     62  63  downstairs family room glass
+  ZONE  3 MOTION    58  59  downstairs family room motion
+  ZONE  4 MOTION    54  55  foyer motion
+  ZONE  5 MOTION    56  57  garage motion
+  ZONE  6 DOORBELL  78  79  doorbell
+  ZONE  8 FIRE      68  69  downstairs smoke
+  ZONE  9 FREEZE    76  77  freeze sensor
+  ZONE 10 DOOR      40  41  front door
+  ZONE 11 DOOR      42  43  mud room door
+  ZONE 12 DOOR      44  45  garage double door
+  ZONE 13 DOOR      46  47  garage single door
+  ZONE 14 DOOR      48  49  garage side door
+  ZONE 15 FIRE      70  71  furnace room heat
+  ZONE 16 FIRE      72  73  garage heat
+  ZONE 25 FIRE      74  75  upstairs smoke
+  ZONE 26 GLASS     64  65  downstairs bedroom glass
+  ZONE 27 DOOR      50  51  deck door
+  ZONE 28 DOOR      52  53  downstairs patio door
+  ZONE 29 GLASS     66  67  main floor office glass
+  ZONE 30 KEYFOB    80  81  keyfob
+ZONE_END
+
+RULE_BEGIN
+RULE_END
