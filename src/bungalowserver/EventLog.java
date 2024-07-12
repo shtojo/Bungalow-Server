@@ -5,7 +5,7 @@ import java.util.LinkedList;
 /**
  * The event log that is sent to the client upon request. This log is stored in
  * memory (on application restart, the log will be empty)
- * @author SJOHNS
+ * @author Shawn Johnston
  */
 public class EventLog {
 

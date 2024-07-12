@@ -28,7 +28,7 @@ import jssc.SerialPortList;
  * to the SerialCallBack event: SerialHandler serialHandler = new
  * SerialHandler(); serialHandler.AddListener(this);
  *
- * @author Shawn
+ * @author Shawn Johnston
  */
 public class SerialHandler {
 

@@ -14,7 +14,7 @@ import javax.mail.internet.MimeMessage;
 
 /**
  * Email sender
- * @author SJOHNS
+ * @author Shawn Johnston
  */
 public class Emailer {
 

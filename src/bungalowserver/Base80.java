@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 /**
  * Provides custom Base80 encoding
- * @author SJOHNS
+ * @author Shawn Johnston
  */
 public class Base80 {
 

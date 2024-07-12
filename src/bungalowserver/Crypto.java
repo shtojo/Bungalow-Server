@@ -27,7 +27,7 @@ import javax.xml.bind.DatatypeConverter;
 
 /**
  * Crypto class for encrypting and decrypting.
- * @author SJOHNS
+ * @author Shawn Johnston
  */
 public class Crypto {
 

@@ -97,7 +97,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 
 /**
  * Speaker
- * @author Shawn
+ * @author Shawn Johnston
  */
 public class Speaker {
 
